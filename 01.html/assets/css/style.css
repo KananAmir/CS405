@@ -1,0 +1,26 @@
+
+.boxes{
+    width: 1000px;
+    height: 400px;
+    border: 2px solid black;
+    display: flex;
+    /* justify-content: center; */
+    /* justify-content: space-between; */
+    /* justify-content: space-around; */
+    justify-content: space-evenly;
+    /* align-items: flex-end; */
+    align-items: center;
+    margin: 0 auto;
+}
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border: 5px dashed black;
+    /* display: inline-block; */
+}
+
+/* .box-2{
+    margin: 20px;
+    padding: 10px;
+} */
