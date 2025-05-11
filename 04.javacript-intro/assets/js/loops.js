@@ -39,8 +39,12 @@ console.log(count);
 
 const scores = [98, 75, 100, 57, 30]
 
-let sum = 0
-for (let i = 0; i < scores.length; i++) {
+// let sum = 0
+// for (let i = 0; i < scores.length; i++) {
+//     sum = sum + scores[i]
+// }
+let sum = scores[0]
+for (let i = 1; i < scores.length; i++) {
     sum = sum + scores[i]
 }
 
@@ -83,9 +87,10 @@ for (; ;) {
 let num = 1000
 //while
 // while(num<=100){
-    //     console.log("aaa"); 
-    //     num++
+//     console.log("aaa"); 
+//     num++
 // }
+
 
 do {
     console.log("hello");
@@ -93,6 +98,29 @@ do {
 } while (num <= 100)
 
 
-    function printUserInfo(user){
-        console.log(user);
+function printUserInfo(user) {
+    console.log(user);
+}
+
+
+const nums = [23, 2, 177, 88, 64]
+
+// console.log(Math.max(...nums));
+
+// let MAX = nums[0]
+// for (let i = 1; i < nums.length; i++) {
+//     if(nums[i] > MAX){
+//         MAX = nums[i]
+//     }
+// }
+
+// console.log("MAX", MAX);
+
+let MIN = nums[0]
+for (let i = 1; i < nums.length; i++) {
+    if(nums[i] < MIN){
+        MIN = nums[i]
     }
+}
+
+console.log("MIN", MIN);
