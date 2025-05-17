@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form id="form">
+        <input type="text" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button type="submit">Submit</button>
+    </form>
+
+
+    <!-- <script>
+        window.location.href = "test.html";
+    </script> -->
+
+
+    <script>
+        const form = document.getElementById('form');
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const userData = {
+                email: email.value,
+                password: password.value
+            };
+            fetch('https://northwind.vercel.app/api/categories/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(userData)
+            }).then(()=>{
+                window.location.href = "test.html";
+            })
+            
+        })
+    </script>
+</body>
+</html>
