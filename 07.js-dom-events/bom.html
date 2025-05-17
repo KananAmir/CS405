@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+        // window.alert('Hello World');
+        //    let bool = window.confirm('Are you sure?');
+        // console.log(bool);
+        //    let username = window.prompt('enter your name');
+
+
+        // setTimeout(() => {
+        //     console.log("Hello World");
+        // }, 2000);
+
+        let count = 0
+        let interval = setInterval(() => {
+            count++;
+            console.log(count);
+            
+            if (count === 20) {
+                clearInterval(interval);
+            }
+
+        }, 200);
+
+
+        //web storage
+        // localStorage, sessionStorage, cookies
+
+        localStorage.setItem('name', 'John Doe');
+        localStorage.setItem('age', 30);
+        localStorage.setItem('isLoggedIn', true);
+        // localStorage.removeItem('name');
+        // localStorage.clear()
+    </script>
+</body>
+
+</html>
