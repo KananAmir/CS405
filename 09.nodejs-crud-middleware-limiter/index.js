@@ -54,7 +54,7 @@ app.use(express.json())
 // app.use(authMiddleware)
 
 //api key middleware
-// app.use(verifyApiKey)
+app.use(verifyApiKey)
 
 //limiter middleware
 app.use(limiter)
