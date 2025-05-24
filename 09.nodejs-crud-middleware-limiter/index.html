@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>CS405</h2>
+
+    <script>
+        const apiUrl = "http://localhost:8080/books"
+
+        
+        fetch(apiUrl, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "x-api-key": "secret_api_key_cs405",
+            }
+        }).then((res)=>res.json()).then(((data)=>{
+            console.log(data);
+        })).catch()
+    </script>
+</body>
+</html>

@@ -2,19 +2,20 @@ const { error } = require('console')
 const express = require('express')
 const { nanoid } = require("nanoid")
 const { rateLimit } = require("express-rate-limit")
-
+const cors  = require("cors")
 require("dotenv").config()
+
 
 const app = express()
 const port = process.env.PORT || 8080
 
 
 const limiter = rateLimit({
-	windowMs: 1 * 60 * 1000, // 1 minutes
-	limit: 10, // Limit each IP to 10 requests per `window` (here, per 15 minutes).
-	standardHeaders: 'draft-8', // draft-6: `RateLimit-*` headers; draft-7 & draft-8: combined `RateLimit` header
-	legacyHeaders: false, // Disable the `X-RateLimit-*` headers.
-	// store: ... , // Redis, Memcached, etc. See below.
+    windowMs: 1 * 60 * 1000, // 1 minutes
+    limit: 10, // Limit each IP to 10 requests per `window` (here, per 15 minutes).
+    standardHeaders: 'draft-8', // draft-6: `RateLimit-*` headers; draft-7 & draft-8: combined `RateLimit` header
+    legacyHeaders: false, // Disable the `X-RateLimit-*` headers.
+    // store: ... , // Redis, Memcached, etc. See below.
 })
 
 
@@ -50,6 +51,7 @@ const verifyApiKey = (req, res, next) => {
     next()
 }
 //middleware
+app.use(cors())
 app.use(express.json())
 // app.use(authMiddleware)
 
@@ -176,7 +178,7 @@ app.get("/books/:id", (req, res) => {
 
 
 //delete data by id
-app.delete("/books/:id", verifyApiKey ,(req, res) => {
+app.delete("/books/:id", verifyApiKey, (req, res) => {
     const id = req.params.id
     const index = books.findIndex((q) => q.id === id)
     if (index === -1) {
