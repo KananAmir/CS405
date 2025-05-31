@@ -1,4 +1,3 @@
-const { error } = require('console')
 const express = require('express')
 const { nanoid } = require("nanoid")
 const { rateLimit } = require("express-rate-limit")
@@ -207,6 +206,7 @@ app.post("/books", (req, res) => {
             message: "invalid request",
         })
     }
+
     const newBook = {
         id: nanoid(),
         title: req.body.title,

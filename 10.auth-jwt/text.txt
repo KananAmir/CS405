@@ -1,0 +1,5 @@
+cors
+authentication, authorization
+bcrypt
+RBAC - role base access controller
+jwt token
