@@ -72,8 +72,13 @@ const verifyToken = (req, res, next) => {
    }
 }
 
+
+const corsOptions = {
+    origin: ["http://localhost:3000", "http://localhost:3001"],
+    credentials: true,
+}
 //middleware
-app.use(cors())
+app.use(cors(corsOptions))
 app.use(express.json())
 // app.use(authMiddleware)
 
